@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head>
+		<title>My Library</title>
+		<meta charset="utf-8"><link href="/stylesheets/myLibrary.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="welcome">
+			<h1>Welcome to myLibrary!</h1>
+		</div>
+
+		<div id="formWrap">
+			<form action="/" method = "post" onsubmit="validateForm();">
+				<h2>Add Book Form</h2>
+
+				<!--title input -->
+				<span>Title:</span><input id="titleField" type="text" name="title" class="textField"><br>
+				<!--author input-->
+				<span>Author:</span><input id="authorField" type="text" name="author" class="textField"><br>
+
+				<!--submit-->
+				<input type="submit" value="submit" id="button">
+
+			</form>
+
+		</div>
+	</body>
+
+
+	<!--Javascript-->
+	<script>
+		function validateForm(){
+			if(document.getElementById('titleField').value == null){
+				alert("ERROR!")
+			}
+		}
+
+
+
+
+	</script>
+
+</html>
