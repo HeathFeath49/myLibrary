@@ -10,7 +10,7 @@
 		</div>
 
 		<div id="formWrap">
-			<form action="/" method = "post" onsubmit="validateForm();">
+			<form action="/" method = "post" onsubmit="return validateForm();">
 				<h2>Add Book Form</h2>
 
 				<!--title input -->
@@ -30,9 +30,17 @@
 	<!--Javascript-->
 	<script>
 		function validateForm(){
-			if(document.getElementById('titleField').value == null){
-				alert("ERROR!")
+			var title = document.getElementById('titleField').value;
+			var author = document.getElementById('authorField').value;
+
+			if(title === "" || author === ""){
+				alert("Oops! It seems you are missing some information!");
+				return false;
 			}
+			else{
+				return true;
+			}
+			
 		}
 
 
