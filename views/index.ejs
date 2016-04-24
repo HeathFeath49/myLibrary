@@ -10,13 +10,13 @@
 		</div>
 
 		<div id="formWrap">
-			<form action="/" method = "post" onsubmit="return validateForm();">
+			<form id="addBookForm" action="/" method = "post">
 				<h2>Add Book Form</h2>
 
 				<!--title input -->
-				<span>Title:</span><input id="titleField" type="text" name="title" class="textField"><br>
+				<span>Title:</span><input id="titleField" type="text" name="book_title" class="textField" required><br>
 				<!--author input-->
-				<span>Author:</span><input id="authorField" type="text" name="author" class="textField"><br>
+				<span>Author:</span><input id="authorField" type="text" name="book_author" class="textField" required><br>
 
 				<!--submit-->
 				<input type="submit" value="submit" id="button">
@@ -29,22 +29,7 @@
 
 	<!--Javascript-->
 	<script>
-		function validateForm(){
-			var title = document.getElementById('titleField').value;
-			var author = document.getElementById('authorField').value;
-
-			if(title === "" || author === ""){
-				alert("Oops! It seems you are missing some information!");
-				return false;
-			}
-			else{
-				return true;
-			}
-			
-		}
-
-
-
+		
 
 	</script>
 
