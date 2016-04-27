@@ -6,12 +6,18 @@ var fs = require('fs');
 var myLibDB = require('../external/myLibraryDB');
 var myModule = require('../external/module.js');
 
-console.log(myLibDB);
+/*console.log(myLibDB);*/
 
-/* GET home page. */
+/* GET Book form */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'ejs' });
 });
+
+router.get('/myLibrary',function(req,res,next){
+	res.render('myLibrary',{title:'ejs'});
+})
+
+
 
 router.post('/',function(req,res){
 	var bookForm = req.body;
@@ -21,7 +27,7 @@ router.post('/',function(req,res){
 		}
 		
 	});
-	res.send('Book Added!');
+	res.redirect('/myLibrary');
 })
 
 /*exports.index = function(req, res){

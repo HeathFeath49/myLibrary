@@ -27,35 +27,6 @@ module.exports = {
 
 };
 
-/*
-db.serialize(function(){
-	//do something
-
-
-	if(!dbExists){
-		console.log('db does not exist');
-		db.run('CREATE TABLE Stuff (thing TEXT)');
-	}
-	else{
-		console.log('db exists');
-	}
-
-});
-*/
-
-
-
-
-
-//insert some data using a statement 
-/*var statement = db.prepare('INSERT INTO `Books` (`title`,`author`)' +
-'VALUES(?,?)');
-
-statement.run('Green Eggs & Ham','Dr.Seuss');
-statement.finalize();
-*/
-
-
 
 
 
