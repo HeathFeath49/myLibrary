@@ -14,7 +14,17 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/myLibrary',function(req,res,next){
-	res.render('myLibrary',{title:'ejs'});
+	
+	myLibDB.getBooksFromDB(function(err,results){
+		if(err){
+			throw err;
+		}
+		res.render('myLibrary',{title:'ejs',books:results});
+		/*res.send(results);*/
+	});
+
+	/*console.log(x);*/
+	
 })
 
 

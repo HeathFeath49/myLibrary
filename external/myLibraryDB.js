@@ -23,10 +23,45 @@ module.exports = {
 			})
 		})
 			
+	},
+
+	getBooksFromDB: function(cb){
+		db.all("SELECT * FROM Books",function(err,results){
+			if(err){
+				return cb(err);
+			}
+
+			cb(null,results);
+		});
 	}
 
 };
 
+/*
+getSurvey: function(cb){
+		db.all("SELECT * FROM Survey", function(err,rows){
+			if(err){
+				return cb(err);
+			}
 
+			var survey = [];
 
+			for(var i in rows){
+				var q = rows[i];
 
+				survey.push({
+					qNum: q.id,
+					question: q.question,
+					answers: [
+						q.answer1,
+						q.answer2,
+						q.answer3,
+						q.answer4
+					]
+				});
+			}
+
+			cb(null,survey);
+		});
+	}
+*/
