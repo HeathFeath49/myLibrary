@@ -26,6 +26,8 @@ module.exports = {
 	},
 
 	getBooksFromDB: function(cb){
+		db.run("UPDATE Books SET `Title` = TRIM(REPLACE(REPLACE(REPLACE(`Title`, '\n', ' '), '\r', ' '), '\t', ' '))");
+		db.run("UPDATE Books SET `Author` = TRIM(REPLACE(REPLACE(REPLACE(`Author`, '\n', ' '), '\r', ' '), '\t', ' '))");
 		db.all("SELECT * FROM Books",function(err,results){
 			if(err){
 				return cb(err);
