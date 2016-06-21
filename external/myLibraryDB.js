@@ -16,9 +16,10 @@ module.exports = {
 
 	addBook: function(data,cb){
 		db.serialize(function(){
-			db.run("INSERT INTO Books (`Title`,`Author`) VALUES($book_title,$book_author)",{
+			db.run("INSERT INTO Books (`Title`,`Author`,`Category`) VALUES($book_title,$book_author,$catSel)",{
 				$book_title: data.book_title,
-				$book_author: data.book_author
+				$book_author: data.book_author,
+				$catSel:data.catSel
 
 			})
 		})
