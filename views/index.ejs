@@ -1,8 +1,8 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Add Book Form</title>
-		<meta charset="utf-8"><link href="stylesheets/bookForm.css" rel="stylesheet">
+		<title>Welcome Page</title>
+		<meta charset="utf-8"><link href="stylesheets/index.css" rel="stylesheet">
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 	</head>
@@ -11,48 +11,14 @@
 			<h1>Welcome to myLibrary!</h1>
 		</div>
 
-		<div id="formWrap">
-			<form id="addBookForm" action="/" method = "post">
-				<h2>Add Book Form</h2>
-
-				<!--title input -->
-				<div>
-					<label for="titleField">Title</label>
-					<input id="titleField" type="text" name="book_title" class="form-control" required><br>
-				</div>
-				<!--author input-->
-				<div>
-					<label for="authorField">Author</label>
-					<input id="authorField" type="text" name="book_author" class="form-control" required><br>
-				</div>
-				<!--category input-->
-
-				<div>
-					<label for="catSel">Category</label>
-	
-					<select class="form-control" id="catSel" name="catSel">
-						<option >Horror</option>
-						<option>Drama</option>
-						<option>Historical</option>
-						<option>Short Stories</option>
-						<option>Computers</option>
-						<option>Other</option>
-					</select>
-			
-				</div>
-
-				<!--submit-->
-				<br>
-				<input type="submit" value="submit" id="button" class="btn btn-primary btn-md">
-
-			</form>
-
-			<a href="/myLibrary"><button id="myBooksBtn">My Books</button></a>
-
+		<!-- nav bar -->
+		<div id='mainNav' class='btn-group-vertical'>
+			<button type='button' class='btn btn-default'>My Books</button>
+			<button type='button' class='btn btn-default'>Wish List</button>
+			<button type='button' class='btn btn-default'>Something</button>
 		</div>
 	</body>
-
-
+	
 	<!--Javascript-->
 	<script>
 		
