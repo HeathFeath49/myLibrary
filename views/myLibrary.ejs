@@ -12,13 +12,15 @@
 	<body>
 	
 	</body>
-		<h1>My Books</h1>
-		<div id="tableContainer">
-			<table id="bookTable" class="table">
+			
+		<div class='container'>
+			<h1>My Books</h1>
+			<table id='bookTable' class='table table-striped'>
 				<thead>
 					<tr>
 						<th>Title</th>
 						<th>Author</th>
+						<th>Category</th>
 					</tr>
 				</thead>
 
@@ -28,6 +30,7 @@
 						<tr>
 							<td><%= JSON.stringify(books[i].Title)%></td>
 							<td><%= JSON.stringify(books[i].Author)%></td>
+							<td><%= JSON.stringify(books[i].Category)%></td>
 						</tr>
 				
 					<% } %>
