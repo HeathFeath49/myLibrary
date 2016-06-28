@@ -2,26 +2,11 @@ h1{
 	text-align: center;
 }
 
-
-
-
-table {
-    
+#sortOptions{
+	float:right;
+	padding-bottom:20px;
 }
 
 
-/*tbody, thead tr { display: block; }
-*/
-/*tbody {
-    height: 350px;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-*/
-/*tbody td, thead th, {
-    width: 140px;
-}*/
 
-/*thead th:last-child {
-    width: 156px;  140px + 16px scrollbar width 
-}*/
+
