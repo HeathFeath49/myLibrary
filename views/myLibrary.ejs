@@ -23,9 +23,9 @@
 
 			<div id="sortOptions">
 				<h3>Sort By:</h3>
-				<button>Alphabetic</button>
-				<button>Category</button>
-				<button>Author</button>
+				<button class='button-group enabled'>Alphabetic</button>
+				<button class='button-group disabled'>Category</button>
+				<button class='button-group disabled'>Author</button>
 			</div>
 
 			<!--TABLE-->
@@ -55,6 +55,7 @@
 
 	<!--Javascript-->
 	<script>
+		//table script
 		$(document).ready(function(){
 			$('#bookTable').DataTable({
 				"ScrollY": "200px",
@@ -62,7 +63,17 @@
 				"paging": false
 			});
 		});
+		//sort button script
+		$('.button-group').click(function(){
+			var clickedBtn = $(this);
 
+			if(clickedBtn.hasClass('disabled')){
+				$('.button-group').addClass('disabled');
+				clickedBtn.removeClass('disabled');;
+				clickedBtn.addClass('enabled');
+			}
+		
+		})
 	</script>
 
 </html>
