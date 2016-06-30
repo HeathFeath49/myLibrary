@@ -23,9 +23,9 @@
 
 			<div id="sortOptions">
 				<h3>Sort By:</h3>
-				<button class='button-group enabled'>Alphabetic</button>
-				<button class='button-group disabled'>Category</button>
-				<button class='button-group disabled'>Author</button>
+				<button onclick='sortAlpha()' class='button-group enabled'>Alphabetic</button>
+				<button onclick='sortCat()' class='button-group disabled'>Category</button>
+				<button onclick='sortAuth()' class='button-group disabled'>Author</button>
 			</div>
 
 			<!--TABLE-->
@@ -57,7 +57,7 @@
 	<script>
 		//table script
 		$(document).ready(function(){
-			$('#bookTable').DataTable({
+			table = $('#bookTable').DataTable({
 				"ScrollY": "200px",
 				"ScrollCollapse": true,
 				"paging": false
@@ -73,7 +73,28 @@
 				clickedBtn.addClass('enabled');
 			}
 		
-		})
+		});
+		//var table = $('#bookTable').DataTable();
+		function sortAlpha(){
+			table.rows().invalidate();
+			table.order([0,'asc']);
+			table.draw();
+
+
+		};
+
+		function sortCat(){
+			table.rows().invalidate();
+			table.order([2,'asc']);
+			table.draw();
+			//alert('Category');
+		};
+
+		function sortAuth(){
+			table.rows().invalidate();
+			table.order([1,'asc']);
+			table.draw();
+		};
 	</script>
 
 </html>
