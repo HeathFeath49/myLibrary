@@ -45,6 +45,7 @@
 							<td><%= JSON.stringify(books[i].Title)%></td>
 							<td><%= JSON.stringify(books[i].Author)%></td>
 							<td><%= JSON.stringify(books[i].Category)%></td>
+							<td></td>
 						</tr>
 				
 					<% } %>
@@ -60,8 +61,23 @@
 			table = $('#bookTable').DataTable({
 				"ScrollY": "200px",
 				"ScrollCollapse": true,
-				"paging": false
-			});
+				"paging": false,
+				"aoColumnDefs" : [ 
+                    {
+                        "aTargets": [3],
+                        "fnCreatedCell" : function(nTd, sData, oData, iRow, iCol){
+                            var b = $('<button>delete</button>');
+                            //b.button();
+                            b.on('click',function(){
+                                alert('button clicked');
+                            });
+                            $(nTd).empty();
+                            $(nTd).prepend(b);
+                        }
+                    }],
+
+     		});
+
 		});
 		//sort button script
 		$('.button-group').click(function(){
